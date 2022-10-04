@@ -4,18 +4,14 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import styles from '../sass/Home.module.scss'
 
+// Importação da interface do post ( contrato )
+import PostCard, { IPost } from '../components/post-card/postCard'
+
+
 const Home: NextPage = () => {
-  
-  // Definição do tipo post
-  type post = {
-    userId: number,
-    id: number,
-    title: string
-    body: string
-  }
 
   // Estado que guarda o array de posts da página
-  const [posts, setPosts] = useState<post[]>([]);
+  const [posts, setPosts] = useState<IPost[]>([]);
 
 
   /**
@@ -28,7 +24,7 @@ const Home: NextPage = () => {
       .then(response => response.json())
       .then(data => {
         setPosts(data);
-      }).catch((err) => { 
+      }).catch((err) => {
         /**
          * Em caso de erro é disparadas essa exceção no terminal
          */
@@ -47,19 +43,16 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
-        {
-          posts.map((item, key) => {
-            return(
-              <div key={key}>
-                <p>UserId: {item.userId}</p>
-                <p>Id: {item.id}</p>
-                <p>title: {item.title}</p>
-                <p>body: {item.body}</p>
-                <hr />
-              </div>
+        <section className={styles.postsWrapper}>
+
+          {
+            posts.map((item, key) => {
+              return (
+                <PostCard {...item} key={key} />
               );
-          })
-        }
+            })
+          }
+        </section>
       </main>
 
       <footer className={styles.footer}>
