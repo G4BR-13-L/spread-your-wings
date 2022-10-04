@@ -32,3 +32,44 @@
   align-items: center;
   flex-grow: 1;
 }
+
+
+// Pc
+@media (min-width:1024px) {
+  .main {
+    max-width: 880px;
+    margin: 0 auto;
+    .postsWrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 20px
+    }
+  }
+    
+}
+
+//Tablet
+@media (min-width: 768px) and (max-width:1023px) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    .postsWrapper{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 20px
+    }
+  }
+}
+
+// Smartphone
+@media (max-width:767px) {
+  .main {
+    width: 100%;
+    margin: 0 auto;
+    .postsWrapper{
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 20px
+    }
+  }
+}
