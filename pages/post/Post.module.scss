@@ -1,0 +1,28 @@
+.postPageContainer{
+
+}
+
+
+// Pc
+@media (min-width:1024px) {
+    .postPageContainer{
+    max-width: 880px;
+    margin: 0 auto;
+}
+}
+
+//Tablet
+@media (min-width: 768px) and (max-width:1023px) {
+    .postPageContainer{
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}
+
+// Smartphone
+@media (max-width:767px) {
+    .postPageContainer{
+        max-width: 95%;
+        margin: 0 auto;
+    }
+}

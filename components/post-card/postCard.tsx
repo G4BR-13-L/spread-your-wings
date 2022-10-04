@@ -1,3 +1,4 @@
+import Router from 'next/router'
 import React from 'react'
 import styles from './postCard.module.scss'
 
@@ -9,11 +10,21 @@ export interface IPost {
 }
 
 
+
 export default function PostCard(props: IPost) {
+
+    function redirectToPostPage(postId: string) {
+        Router.push({
+            pathname: '/post/',
+            query: { postId: postId }
+        })
+    }
     return (
-        <div className={styles.postCardContainer}>
+
+        <div className={styles.postCardContainer} onClick={() => redirectToPostPage(props.id)}>
             <h4>{props.title}</h4>
             <p>{props.body.split(" ").splice(0, 5).join(" ")}...</p>
         </div>
+
     )
 }
