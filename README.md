@@ -44,3 +44,11 @@ localhost:3000
  
 ### Capturas de Tela da aplicação final 
 
+#### Página inicial
+<img src="./docs/print1.png"/>
+
+#### Leitura de post e comentários
+<img src="./docs/print1.png"/>
+
+#### Perfil de usuário
+<img src="./docs/print1.png"/>
