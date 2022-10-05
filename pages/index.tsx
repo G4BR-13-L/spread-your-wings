@@ -43,6 +43,10 @@ const Home: NextPage = () => {
       </Head>
 
       <main className={styles.main}>
+        <h1>
+          BLOG
+        </h1>
+        <h3>Teste de front-end e consumo de API</h3>
         <section className={styles.postsWrapper}>
 
           {
@@ -57,14 +61,10 @@ const Home: NextPage = () => {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          href="https://gabrielvictor.web.app"
           target="_blank"
-          rel="noopener noreferrer"
         >
-          Powered by{' '}
-          <span className={styles.logo}>
-            <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} />
-          </span>
+          Desenvolvido por Gabriel Victor
         </a>
       </footer>
     </div>
