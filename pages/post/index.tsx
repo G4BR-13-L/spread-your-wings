@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import { IPost } from '../../components/post-card/postCard'
 import CommentCard, { IComment } from '../../components/comment-card/commentCard';
-
 import styles from './Post.module.scss'
+import { getData, saveData } from '../../controller/Controler';
+
 
 export default function Post() {
     const router = useRouter();
@@ -11,16 +12,26 @@ export default function Post() {
     const [post, setPost] = useState<IPost>();
     const [comments, setComments] = useState<IComment[]>([]);
 
+
+
     async function loadPost() {
+        if( !postId ) {
+            setPostId(getData('last_post').id);
+            console.log(postId)
+            return
+        }
         fetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
-            .then(response => response.json())
-            .then(data => {
-                setPost(data);
-            }).catch((err) => {
-                /**
-                 * Em caso de erro é disparadas essa exceção no terminal
-                 */
-                console.error('Falha ao buscar dados do Post')
+        .then(response => response.json())
+        .then(data => {
+            saveData('last_post', data)
+            setPost(data);
+        }).catch((err) => {
+            /**
+             * Em caso de erro é disparadas essa exceção no terminal
+             */
+         
+            
+            console.error('Falha ao buscar dados do Post')
             });
     }
 
@@ -43,22 +54,22 @@ export default function Post() {
     }
     useEffect(() => {
         loadPostData();
-    }, [])
+    }, [postId])
 
 
 
     return (
+
         <div className={styles.postPageContainer}>
             <section>
-
-            <h1>{post  ? post.title : 'Erro'}</h1>
-            <div>
-                <p>{ post?.body }</p>
-            </div>
+                <h1>{post ? post.title : '...'}</h1>
+                <div>
+                    <p>{post?.body}</p>
+                </div>
             </section>
             <section className={styles.postSection}>
                 <h3>
-                   Comentários 
+                    Comentários
                 </h3>
                 <div>
                     {
@@ -71,5 +82,8 @@ export default function Post() {
                 </div>
             </section>
         </div>
+
+
+
     )
 }
