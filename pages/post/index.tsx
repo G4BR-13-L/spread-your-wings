@@ -29,8 +29,6 @@ export default function Post() {
             /**
              * Em caso de erro é disparadas essa exceção no terminal
              */
-         
-            
             console.error('Falha ao buscar dados do Post')
             });
     }
