@@ -5,10 +5,6 @@ import CommentCard, { IComment } from '../../components/comment-card/commentCard
 
 import styles from './Post.module.scss'
 
-export interface IPostPage {
-    post: IPost,
-    comments: IComment[]
-}
 export default function Post() {
     const router = useRouter();
     const [postId, setPostId] = useState(router.query.postId);

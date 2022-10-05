@@ -12,15 +12,17 @@ export interface IComment {
 
 export default function CommentCard(props: IComment) {
 
-    function redirectToPostPage(postId: number) {
+    function redirectToUserProfilePage(userId: number) {
         Router.push({
             pathname: '/user-profile/',
-            query: { postId: postId }
+            query: { userId: userId }
         })
     }
     return (
 
-        <div className={styles.postCommentCardContainer} onClick={() => redirectToPostPage(props.id)}>
+        <div className={styles.postCommentCardContainer} 
+        onClick={() => redirectToUserProfilePage(props.id)}
+        >
             <div className={styles.imageContainer}>
                 <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_568656.png&f=1&nofb=1&ipt=bed8e4960925d9c07fd2f757722b5df761bb495dfd69c4c3f74e63ec383ce71b&ipo=images" alt="" />
             </div>

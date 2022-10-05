@@ -1,0 +1,87 @@
+.userProfileContainer {
+    margin: 0 auto;
+    
+}
+
+// Pc
+@media (min-width: 1024px) {
+    .userProfileContainer {
+        margin-top: 100px;
+        max-width: 880px;
+        .userProfileCentralContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+            grid-gap: 25px;
+            border: 1px solid black;
+            border-radius: 10px;
+            .imageContainer{
+                display: grid;
+                place-items: center;
+                width: 100%;
+                img{
+                    width: 80%
+                }
+            }
+            .mainInformationContainer{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+//Tablet
+@media (min-width: 768px) and (max-width: 1023px) {
+    .userProfileContainer {
+        margin: 0 auto;
+        .userProfileCentralContainer{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            place-items: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            .imageContainer{
+                display: grid;
+                place-items: center;
+                width: 100%;
+                img{
+                    width: 80%
+                }
+            }
+            .mainInformationContainer{
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+// Smartphone
+@media (max-width: 767px) {
+    .userProfileContainer {
+        margin: 0 auto;
+        .userProfileCentralContainer{
+            display: flex;
+            flex-direction: column;
+            border: 1px solid black;
+            border-radius: 10px;
+            .imageContainer{
+                display: grid;
+                place-items: center;
+                width: 100%;
+                img{
+                    width: 80%
+                }
+            }
+            .mainInformationContainer{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+}
