@@ -48,7 +48,7 @@ localhost:3000
 <img src="./docs/print1.png"/>
 
 #### Leitura de post e comentários
-<img src="./docs/print1.png"/>
+<img src="./docs/print2.png"/>
 
 #### Perfil de usuário
-<img src="./docs/print1.png"/>
+<img src="./docs/print3.png"/>
